@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+private:
+    int id;
+    string name;
+    double salary;
+
+public:
+    Employee(int empId, string empName, double empSalary)
+        : id(empId), name(empName), salary(empSalary) {}
+
+    void display() {
+        cout << id << " " << name << " " << salary << endl;
+    }
+
+    void incrementSalary(double amount) {
+        salary += amount;
+    }
+};
+
+int main() {
+    Employee e1(1, "Alice", 50000), e2(2, "Bob", 60000);
+    e1.display();
+    e2.display();
+    e1.incrementSalary(5000);
+    e1.display();
+    return 0;
+}
