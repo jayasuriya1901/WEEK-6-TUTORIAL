@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Product {
+public:
+    int productID;
+    string productName;
+    double price;
+    int quantity;
+
+    double calculateTotalPrice() {
+        return price * quantity;
+    }
+
+    void productDetails() {
+        cout << productID << " " << productName << " " << price << " " << quantity << endl;
+    }
+};
+
+int main() {
+    Product products[3];
+    products[0] = {101, "Laptop", 50000.0, 2};
+    products[1] = {102, "Mobile", 15000.0, 3};
+    products[2] = {103, "Tablet", 20000.0, 1};
+
+    for (int i = 0; i < 3; i++) {
+        products[i].productDetails();
+    }
+
+    return 0;
+}
