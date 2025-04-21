@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Product {
+private:
+    int productID;
+    string productName;
+    double price;
+    int quantity;
+
+public:
+    Product() : productID(0), productName("Default"), price(0.0), quantity(0) {}
+    Product(int id, string name, double cost, int qty) : productID(id), productName(name), price(cost), quantity(qty) {}
+    double calculateTotalPrice() { return price * quantity; }
+    void displayProductDetails() {
+        cout << productID << " " << productName << " " << price << " " << quantity << endl;
+    }
+    ~Product() { cout << "Product object removed" << endl; }
+};
+
+int main() {
+    Product cart[3] = {
+        Product(1, "Laptop", 50000.0, 1),
+        Product(2, "Phone", 15000.0, 2),
+        Product(3, "Tablet", 20000.0, 1)
+    };
+
+    for (int i = 0; i < 3; i++) {
+        cart[i].displayProductDetails();
+    }
+
+    return 0;
+}
